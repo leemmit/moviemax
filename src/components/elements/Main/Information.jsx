@@ -1,4 +1,5 @@
 import styles from './Main.module.scss'
+import Button from '../../UI/Button/Button'
 
 
 const Information = ({movie}) => {
@@ -10,6 +11,12 @@ const addToFavourites = (movieID) => {
         favourites = JSON.parse(favourites)
         localStorage.setItem('favMovies', [...favourites, movieID])
         alert(`${movieID} теперь в избранном!`)
+    }
+}
+
+const setModuleShow = (par) => {
+    if (par) {
+        console.log('video is opened')
     }
 }
 
@@ -30,7 +37,7 @@ const addToFavourites = (movieID) => {
 
             <div className={styles.buttons}>
                 <Button cb={() => setModuleShow(true)}> {/* 23:50 */}
-                    <i className="bx bx-play"></i>
+                    <i className="bx bx-play" style={{color: '#c62e21'}}></i>
                     <span>Play</span>
                 </Button>
                 <Button cb={addToFavourites}>
