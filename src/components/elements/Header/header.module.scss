@@ -38,6 +38,11 @@
 .profile-wrapper {
     display: flex;
     align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
 
     > div {
         height: 35px;
