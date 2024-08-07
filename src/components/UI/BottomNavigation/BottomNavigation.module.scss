@@ -6,15 +6,20 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 1;
 
     > button {
         opacity: 0.8;
         transition: border-color .4s ease, opacity .4s ease;
-        border-bottom: 2px solid transparent;
+        border: none;
+        border-bottom: 4px solid transparent;
         padding-bottom: 0.5rem;
-        font-size: 20px;
+        font-size: 16px;
         text-transform: uppercase;
         color: #fff;
+        background-color: transparent;
+        margin: 0 1rem;
+        cursor: pointer;
 
         &.active {
             border-color: #c62e21;

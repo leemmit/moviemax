@@ -1,3 +1,5 @@
+@import '../../../variables.scss'; 
+
 .header {
     padding: 20px 40px;
     display: flex;
@@ -31,7 +33,7 @@
         right: 0;
         position: absolute;
         border-radius: 50%;
-        border: 1px solid #0f1011;
+        border: 1px solid $bg;
     }
 }
 
