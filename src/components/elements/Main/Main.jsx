@@ -1,0 +1,14 @@
+import styles from './Main.module.scss'
+
+const Main = () => {
+    return <div>
+        <Sidebar />
+        <div style={{}}>
+            <Information movie={DATA[0]} />
+            <BottomNavigation />
+        </div>
+
+    </div>
+}
+
+export default Main
