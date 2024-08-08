@@ -10,3 +10,12 @@ $bg: #0f1011;
 		opacity: 1;
 	}
 }
+
+@keyframes bell {
+	25% {
+		rotate: -15deg;
+	}
+	75% {
+		rotate: 10deg;
+	}
+}

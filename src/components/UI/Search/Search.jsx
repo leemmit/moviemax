@@ -7,7 +7,7 @@ const Search = () => {
                 <i className='bx bx-search-alt'></i>
                 <input type="text" placeholder='I`m searching for...' />
             </div>
-            <i className='bx bx-customize'></i>
+            <i className='bx bx-filter'></i>
         </div>
     )
 }

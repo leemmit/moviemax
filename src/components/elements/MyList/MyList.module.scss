@@ -27,28 +27,78 @@
 
     .listContainer {
         display: flex;
+        margin-left: 2rem;
+        overflow: hidden;
 
-        .listItem {
-            position: relative;
+        .listWrapper {
+            overflow: hidden;
 
-            > img {
-                aspect-ratio: 16/9;
-                max-width: 250px;
-                margin: 0 1rem;
+            .listItem {
+                position: relative;
+                margin: 0 .5rem;
+                cursor: pointer;
+    
+                > img {
+                    aspect-ratio: 16/9;
+                    max-width: 250px;
+                }
+    
+                &::before {
+                    content: '';
+                    background-image: linear-gradient(to top, $bg, transparent 70%);
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+    
+                .duration {
+                    position: absolute;
+                    color: $gray;
+                    right: 0;
+                    bottom: 0;
+                    margin-bottom: 0.4rem;
+                    margin-right: 0.3rem;
+                }
+    
+                &:hover {
+                    i {
+                        display: block;
+                        transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    }
+                }
             }
 
-            > span {
+            .name {
+                display: block;
                 color: #fff;
+                opacity: .8;
+                font-size: 18px;
+                margin: 0.2rem;
+                //padding: 5px;
+                //padding-left: 1rem;
+                max-width: 250px;
+                cursor: pointer;
+                //box-shadow: inset #000 0 -20px 20px; 
+            }
+    
+            i {
+                color: $red;
+                font-size: 36px;
+                //padding: 3px;
+                padding-left: 2px;
                 position: absolute;
-                left: 0;
-                bottom: 0;
-                font-size: 20px;
-                margin-left: 2rem;
-                margin-bottom: 2rem;
-                padding: 5px;
-                box-shadow: inset #000 0 -20px 20px; 
+                left: 45%;
+                bottom: 38%;
+                border: 1px solid $bg;
+                border-radius: 50%;
+                background-color: $bg;
+                display: none;
+                transition: cubic-bezier(0.075, 0.82, 0.165, 1);
             }
         }
+
 
         
     }
