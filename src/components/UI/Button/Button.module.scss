@@ -13,10 +13,16 @@
     align-items: center;
     justify-content: center;
     width: 150px;
+    transition: all .3s;
 
     > i {
         font-size: 28px;
         margin-right: 0.4rem;
         margin-bottom: 0.1rem;
+    }
+
+    &:hover{
+        transform: translateY(-0.10em);
+        box-shadow: 0 0 0.5em 0em $gray;
     }
 }

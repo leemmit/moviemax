@@ -28,8 +28,8 @@ const setModuleShow = (par) => {
 
             <div className={styles.additional}>
                 <span>{movie.year}</span>
-                <span>{movie.limitAge}</span>
-                <span>{movie.rating}</span>
+                <span className={styles.limitAge} >{movie.limitAge}</span>
+                <span>{movie.rating} &#9733;</span>
                 <span>{movie.duration}</span>
             </div>
 

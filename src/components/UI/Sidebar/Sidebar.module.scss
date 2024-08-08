@@ -1,18 +1,28 @@
 @import '../../../variables'; 
 
 .sidebar {
+    transition: .7s cubic-bezier(.25,.1,.25,1);
+
     > button {
         background-color: transparent;
         border: none;
         color: $gray;
         font-size: 30px;
+        margin-left: 3vw;
+        transition: .4s ease;
+
+        &:hover {
+            transform: scale(1.14);
+            color: $red;
+            transition: .4s ease;
+        }
     }
 
     ul {
         list-style-type: none;
         padding: 0;
         display: none;
-        animation: opacity .4s; 
+        animation: opacity .4s;
 
         &.show {
             display: block;
@@ -26,8 +36,8 @@
                 color: $gray;
                 text-decoration: none;
                 border-left: 2px solid transparent;
-                font-size: 20px;
-
+                font-size: 18px;
+                text-align: center;
 
                 &:hover, &.active {
                     border-color: $red;

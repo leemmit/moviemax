@@ -2,15 +2,19 @@
 
 .wrapper {
     position: relative;
-    // height: calc(100vh - 78px);
+    height: calc(100vh - 78px);
     display: flex;
-    min-height: 551px;
+    overflow: hidden;
+    width: 1200px;
+    //min-height: 551px;
+    //min-height: 90vh;
 
     .main {
         background-size: cover;
-        background-position: center;
+        //background-position: center;
         background-repeat: no-repeat;
         position: relative;
+        background-attachment: fixed;
 
         &::before {
             content: '';
@@ -26,8 +30,10 @@
     .info {
         position: relative;
         z-index: 1;
-        width: 40%;
-        padding: 5rem 0 5rem 1rem;
+        //width: 40%;
+        width: 500px;
+        padding: 4rem 0 5rem 1rem;
+        transition: cubic-bezier(.25,.1,.25,1);
 
         .additional {
             display: flex;
@@ -36,8 +42,15 @@
             margin: 1rem 0 2rem;
 
             > span {
-                margin-right: 0.5rem;
+                margin-right: 1.5rem;
                 font-size: 18px;
+
+                &.limitAge {
+                    border: 1px solid $gray;
+                    border-bottom: 2px solid $gray;
+                    border-radius: 20%;
+                    padding: .2rem;
+                }
             }
         }
 
