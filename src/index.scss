@@ -3,6 +3,8 @@
 body, 
 html {
   background-color: $bg;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 body {
@@ -23,4 +25,9 @@ code {
 
 button {
   cursor: pointer;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
 }

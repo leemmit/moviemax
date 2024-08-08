@@ -2,11 +2,10 @@
 
 .wrapper {
     position: relative;
-    height: calc(100vh - 78px);
+    //height: calc(100vh - 78px);
     display: flex;
     overflow: hidden;
-    width: 1200px;
-    //min-height: 551px;
+    height: 480px;
     //min-height: 90vh;
 
     .main {
@@ -14,7 +13,6 @@
         //background-position: center;
         background-repeat: no-repeat;
         position: relative;
-        background-attachment: fixed;
 
         &::before {
             content: '';
@@ -32,7 +30,7 @@
         z-index: 1;
         //width: 40%;
         width: 500px;
-        padding: 4rem 0 5rem 1rem;
+        padding: 3rem 0 5rem 1rem;
         transition: cubic-bezier(.25,.1,.25,1);
 
         .additional {
@@ -57,7 +55,7 @@
         .description {
             font-size: 18px;
             color: $gray;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             line-height: 1.65;
         }
     }

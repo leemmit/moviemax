@@ -1,11 +1,12 @@
-import styles from './Main.module.scss'
-import Button from '../../UI/Button/Button'
+import styles from '../Main.module.scss'
+import Button from '../../../UI/Button/Button'
 
 
 const Information = ({movie}) => {
 
 const addToFavourites = (movieID) => {
     let favourites = localStorage.getItem('favMovies')
+    console.log(favourites);
 
     if (favourites) {
         favourites = JSON.parse(favourites)
@@ -40,7 +41,7 @@ const setModuleShow = (par) => {
                     <i className="bx bx-play" style={{color: '#c62e21'}}></i>
                     <span>Play</span>
                 </Button>
-                <Button cb={addToFavourites}>
+                <Button cb={addToFavourites(movie.id)}>
                     <i className="bx bx-plus"></i>
                     <span>My list</span>
                 </Button>

@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { DATA } from '../../../data'
 import styles from './Main.module.scss'
 import Sidebar from '../../UI/Sidebar/Sidebar'
-import Information from '../Main/Information'
+import Information from './Information/Information'
 import BottomNavigation from '../../UI/BottomNavigation/BottomNavigation'
-import Episodes from '../Episodes/Episodes'
+import Episodes from './Episodes/Episodes'
 
 const Main = () => {
     const [isSidebarShown, setIsSidebarShown] = useState(false)
