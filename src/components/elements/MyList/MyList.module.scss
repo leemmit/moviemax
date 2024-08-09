@@ -2,6 +2,7 @@
 
 .wrapper {
     min-height: 500px;
+    overflow: hidden;
 
     .title {
         padding: 2rem 3rem;
@@ -25,13 +26,22 @@
         }
     }
 
+    .slider {
+        width: 50%;
+
+        .item {
+
+            > div {
+                margin-top: 100px;
+            }
+        }
+    }
+
     .listContainer {
-        display: flex;
+        display: inline-flex;
         margin-left: 2rem;
-        overflow: hidden;
 
         .listWrapper {
-            overflow: hidden;
 
             .listItem {
                 position: relative;
@@ -99,7 +109,25 @@
             }
         }
 
+        
+        .blockSeeAll {
+            width: 50px;
+            height: 100%;
+            margin: 0 .5rem;
+            background-color: #ffffff19;
+            border-radius: 7%;
+            text-align: center;
 
+            > i {
+                color: #fff;
+                font-size: 36px;
+                margin: 104% 0;
+            }
+
+            &:hover {
+                box-shadow: 0 0 0.2rem 0 $gray;
+            }
+        }
         
     }
 }
