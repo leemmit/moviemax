@@ -1,14 +1,14 @@
-import Header from "./components/elements/Header/Header.jsx";
-import Main from "./components/elements/Main/Main.jsx";
-import MyList from "./components/elements/MyList/MyList.jsx";
-import { DATA } from './data.js'
+//import HomePage from "./pages/HomePage";
+import MoviePage from "./pages/MoviePage";
+//import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Header from "./components/elements/Header/Header";
 
 function App() {
   return (
     <>
+      {/* <MoviePage/> */}
       <Header/>
-      <Main movie={DATA[4]}/>
-      <MyList/>
+      
     </>
   )
 }

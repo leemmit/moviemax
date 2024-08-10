@@ -3,10 +3,10 @@ import styles from './Header.module.scss'
 const Profile = () => {
     return (
         <div className={styles['profile-wrapper']}>
-            <div className={styles.notification}>
+            <a href='/notification' className={styles.notification}>
                 <i class='bx bxs-bell'></i>
                 <span></span>
-            </div>
+            </a>
             <div className={styles.profile}>
                 <div>
                     <img 
