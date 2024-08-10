@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import styles from './Main.module.scss'
 import Sidebar from '../../UI/Sidebar/Sidebar'
 import Information from './Information/Information'
@@ -7,7 +7,16 @@ import Episodes from './Episodes/Episodes'
 
 const Main = ({movie}) => {
     const [isSidebarShown, setIsSidebarShown] = useState(false)
-    const [activeTab, setActiveTab] = useState(false)
+    //const [activeTab, setActiveTab] = useState(1)
+
+    const [activeTab, setActiveTab] = useState(() => {
+        return Number(localStorage.getItem('activeTab')) || 1;
+    });
+
+    useEffect(() => {
+        // Сохраняем активную вкладку в localStorage при каждом её изменении
+        localStorage.setItem('activeTab', activeTab);
+    }, [activeTab]);
     
     return (
         <div className={styles.wrapper}>

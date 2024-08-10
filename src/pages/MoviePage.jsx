@@ -6,7 +6,6 @@ import { DATA } from '../data.js'
 const Movie_page = () => {
     return (
         <>
-            <Header/>
             <Main movie={DATA[4]}/>
             <MyList/>
         </>
