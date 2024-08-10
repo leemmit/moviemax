@@ -1,26 +1,24 @@
 import styles from './MyList.module.scss'
 import { DATA } from '../../../data'
-import FlickitySlider from "../../UI/FlickitySlider/FlickitySlider";
+//import FlickitySlider from "../../UI/FlickitySlider/FlickitySlider";
 import '../../UI/FlickitySlider/flickity.css'
-import Flickity from 'react-flickity-component';
+//import Flickity from 'react-flickity-component';
 
 //let list = localStorage.getItem('favMovies')
 let list = [1, 2, 3, 4];
-const flickityOptions = {
-    initialIndex: 2
-}
+// const flickityOptions = {
+//     initialIndex: 2
+// }
 
 const MyList = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.title}>
                 <h2>My list</h2>
-                <div>
-                    <button>
-                        <span>See All</span>
-                        <i class="bx bx-chevron-right"></i>
-                    </button>
-                </div>
+                <button>
+                    <span>See All</span>
+                    <i class="bx bx-chevron-right"></i>
+                </button>
             </div>
 
             <div className={styles.listContainer}>

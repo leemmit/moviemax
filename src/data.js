@@ -2,6 +2,7 @@ import avengers from './images/avengers.png'
 import bg from './images/bg.jpg'
 import wednesdaylogo from './images/wednesday-logo.webp'
 import wednesdayImage from './images/wednesdayImage.jpg'
+import minionsLogo from './images/minions-logo.png'
 
 export const DATA = [
 	{
@@ -87,7 +88,7 @@ export const DATA = [
 	{
 		id: 5,
 		name: 'Minions',
-		logo: 'https://avatars.mds.yandex.net/i?id=8d1ddbfc596f4bb20747ac922868ae70_l-5232263-images-thumbs&n=13',
+		logo: minionsLogo,
 		mainImage: 'https://avatars.mds.yandex.net/i?id=c9c66e2a98ed85f21d0b1aeb1c46d08a_l-12011291-images-thumbs&n=13',
 		year: 2015,
 		limitAge: '6+',
