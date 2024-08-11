@@ -11,6 +11,8 @@ export const getMovies = (url) => {
     }).then(resp => resp.json());
 };
 
+
+
 // function showMovies(data) {
 //     const moviesEl = document.querySelector(".movies");
 

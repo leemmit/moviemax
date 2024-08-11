@@ -23,15 +23,23 @@ const setModuleShow = (par) => {
 
 // localStorage.getItem('favMovies') для вывода
 
+// movie.logo и т.д все первые значения можно будет убрать
+// если вывод будет нормальным
+
     return (
         <div className={styles.info}>
-            <img src={movie.logo} alt={movie.name} width='200' style={{opacity: .7}}/>
+            <img 
+            src={movie.logo || movie.logoUrl} 
+            alt={movie.name || movie.nameEn || movie.nameOriginal} 
+            width='200' 
+            style={{opacity: .7}}
+            />
 
             <div className={styles.additional}>
                 <span>{movie.year}</span>
-                <span className={styles.limitAge} >{movie.limitAge}</span>
-                <span>{movie.rating} &#9733;</span>
-                <span>{movie.duration}</span>
+                <span className={styles.limitAge} >{movie.limitAge || movie.ratingAgeLimits?.slice(3)}</span>
+                <span>{movie.rating || movie.ratingKinopoisk || movie.ratingImdb} &#9733;</span>
+                <span>{movie.duration || `${Math.floor(movie.filmLength / 60)}h ${movie.filmLength % 60}min`}</span>
             </div>
 
             <div className={styles.description}>{movie.description}</div>

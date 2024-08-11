@@ -1,6 +1,5 @@
 import styles from './Search.module.scss'
 import {useState} from 'react'
-import { getMovies } from '../../../server'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -11,7 +10,7 @@ const Search = ({ onSearchChange }) => {
     const handleInputChange = (event) => {
         const newValue = event.target.value;
         setValue(newValue);
-        onSearchChange(newValue); // Передаем новое значение выше по иерархии компонентов
+        // onSearchChange(newValue); // Передаем новое значение выше по иерархии компонентов
     };
 
     const handleSearchClick = () => {

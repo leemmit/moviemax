@@ -38,7 +38,7 @@ const Episodes = ({movie}) => {
             static
             >
                 {!list ? '' : list.map(iD => (
-                    <div className={styles.item}>
+                    <div key={iD} className={styles.item}>
                         <div className={styles.slide} style={{
                             backgroundImage: `url(${DATA.find(item => item.id === iD).mainImage})`,
                             aspectRatio: 16/9,

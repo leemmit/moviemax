@@ -8,6 +8,7 @@ import { useState } from "react";
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
+  const [movieId, setMovieId] = useState(0);
 
   return (
     <>
@@ -16,9 +17,9 @@ function App() {
           {/* <Header onSearchChange={setSearchValue}/> */}
           <Header onSearchChange={setSearchValue}/>
           <Routes>
-              <Route exact path="/" Component={MoviePage} />
-              <Route exact path="/list" Component={() => <ListMoviePage searchValue={searchValue} />} />
-              <Route exact path="/notification" Component={NotificationPage} />
+              <Route exact path="/" Component={NotificationPage} />
+              <Route exact path="/list" Component={() => <ListMoviePage searchValue={searchValue} onMovieIdChange={setMovieId} />} />
+              <Route exact path="/movie" Component={() => <MoviePage movieId={movieId} />} />
           </Routes>
       </Router>
       

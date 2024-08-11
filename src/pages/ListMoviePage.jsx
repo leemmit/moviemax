@@ -6,13 +6,13 @@ const API_URL_POPULAR = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/coll
 //const API_URL_POPULAR = ''
 
 
-const ListMoviePage = ({searchValue}) => {
-    //const searchUrl = `${API_URL_KEYWORD}?keyword=${encodeURIComponent(searchValue)}&page=1`;
-    const searchUrl = API_URL_POPULAR
+const ListMoviePage = ({searchValue, onMovieIdChange}) => {
+    const searchUrl = `${API_URL_KEYWORD}?keyword=${encodeURIComponent(searchValue)}&page=1`;
+    //const searchUrl = API_URL_POPULAR
     console.log(searchUrl);
     return (
         <div>
-            <MovieContainer url={searchUrl}/> 
+            <MovieContainer url={searchUrl} onMovieIdChange={onMovieIdChange}/> 
         </div>
     );
 }
