@@ -14,6 +14,11 @@
 		align-items: center;
 	}
 
+	button {
+		background-color: transparent;
+		border: none;
+	}
+
 	input {
 		background-color: transparent;
 		outline: none;
@@ -25,7 +30,8 @@
 		}
 	}
 
-	i {
+	i{
+		//background: $bg;
 		color: $gray;
 		font-size: 20px;
 		cursor: pointer;

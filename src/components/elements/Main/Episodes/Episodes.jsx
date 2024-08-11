@@ -23,7 +23,7 @@ const Episodes = ({movie}) => {
                 
                 <button>
                     <span>See All</span>
-                    <i class="bx bx-chevron-right"></i>
+                    <i className="bx bx-chevron-right"></i>
                 </button>
             </div>
 

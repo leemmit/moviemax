@@ -1,11 +1,38 @@
 import styles from './Search.module.scss'
+import {useState} from 'react'
+import { getMovies } from '../../../server'
+import { useNavigate } from 'react-router-dom'
 
-const Search = () => {
+
+const Search = ({ onSearchChange }) => {
+    const [value, setValue] = useState('')
+    const navigate = useNavigate();
+
+    const handleInputChange = (event) => {
+        const newValue = event.target.value;
+        setValue(newValue);
+        onSearchChange(newValue); // Передаем новое значение выше по иерархии компонентов
+    };
+
+    const handleSearchClick = () => {
+        if (value !== ''){
+            onSearchChange(value); // Обновляем значение поиска в родительском компоненте
+            navigate('/list'); // Переходим на страницу списка фильмов
+        }
+    };
+
     return (
         <div className={styles.search}>
             <div>
-                <i className='bx bx-search-alt'></i>
-                <input type="text" placeholder='I`m searching for...' />
+                <button onClick={handleSearchClick}>
+                    <i className='bx bx-search-alt'></i>
+                </button>
+                <input 
+                type="text" 
+                placeholder='I`m searching for...'
+                onChange={handleInputChange}
+                value={value}
+                />
             </div>
             <i className='bx bx-filter'></i>
         </div>

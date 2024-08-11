@@ -2,11 +2,11 @@ import Search from "../../UI/Search/Search"
 import styles from "./Header.module.scss"
 import Profile from "./Profile"
 
-const Header = () => {
+const Header = ({ onSearchChange }) => {
     return (
         <div className={styles.header}>
             <div>
-                <a href="/home">
+                <a href="/list">
                     <img 
                     src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" 
                     alt="Netflix"
@@ -14,7 +14,7 @@ const Header = () => {
                     width='112' 
                     />
                 </a>
-                <Search/>
+                <Search onSearchChange={onSearchChange} />
             </div>
             <Profile/>
         </div>

@@ -4,7 +4,7 @@ const Profile = () => {
     return (
         <div className={styles['profile-wrapper']}>
             <a href='/notification' className={styles.notification}>
-                <i class='bx bxs-bell'></i>
+                <i className='bx bxs-bell'></i>
                 <span></span>
             </a>
             <div className={styles.profile}>
@@ -13,7 +13,7 @@ const Profile = () => {
                     src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/06/28/14/avatar.jpg?width=50" 
                     alt="" />
                 </div>
-                <i class='bx bx-caret-down'></i>
+                <i className='bx bx-caret-down'></i>
             </div>
         </div>
     )

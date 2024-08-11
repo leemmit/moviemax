@@ -17,23 +17,23 @@ const MyList = () => {
                 <h2>My list</h2>
                 <button>
                     <span>See All</span>
-                    <i class="bx bx-chevron-right"></i>
+                    <i className="bx bx-chevron-right"></i>
                 </button>
             </div>
 
             <div className={styles.listContainer}>
                 {!list ? '' : list.map(iD => (
-                    <div className={styles.listWrapper}>
+                    <div key={iD} className={styles.listWrapper}>
                         <div className={styles.listItem}>
                             <img src={DATA.find(item => item.id === iD).mainImage} alt={DATA.find(item => item.id === iD).name} />
                             <span className={styles.duration}>{DATA.find(item => item.id === iD).duration}</span>
-                            <i class='bx bx-play'></i>
+                            <i className='bx bx-play'></i>
                         </div>
                         <span className={styles.name}>{DATA.find(item => item.id === iD).name} {DATA.find(item => item.id === iD).rating}&#9733;</span>
                     </div>
                 ))}
                 <div className={styles.blockSeeAll}>
-                    <i class='bx bx-right-arrow-alt' ></i>
+                    <i className='bx bx-right-arrow-alt' ></i>
                 </div>
             </div>
 
