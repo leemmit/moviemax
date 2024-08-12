@@ -1,5 +1,6 @@
 import styles from '../Main.module.scss'
 import Button from '../../../UI/Button/Button'
+import { trimSentences } from '../../../../server'
 
 
 const Information = ({movie}) => {
@@ -37,12 +38,12 @@ const setModuleShow = (par) => {
 
             <div className={styles.additional}>
                 <span>{movie.year}</span>
-                <span className={styles.limitAge} >{movie.limitAge || movie.ratingAgeLimits?.slice(3)}</span>
+                <span className={styles.limitAge} >{movie.limitAge || movie.ratingAgeLimits?.slice(3)}+</span>
                 <span>{movie.rating || movie.ratingKinopoisk || movie.ratingImdb} &#9733;</span>
                 <span>{movie.duration || `${Math.floor(movie.filmLength / 60)}h ${movie.filmLength % 60}min`}</span>
             </div>
 
-            <div className={styles.description}>{movie.description}</div>
+            <div className={styles.description}>{trimSentences(movie.description, 3)}</div>
 
             <div className={styles.buttons}>
                 <Button cb={() => setModuleShow(true)}> {/* 23:50 */}

@@ -5,7 +5,7 @@ import Information from './Information/Information'
 import BottomNavigation from '../../UI/BottomNavigation/BottomNavigation'
 import Episodes from './Episodes/Episodes'
 
-const Main = ({movie}) => {
+const Main = ({movie, cover}) => {
     const [isSidebarShown, setIsSidebarShown] = useState(false)
     //const [activeTab, setActiveTab] = useState(1)
 
@@ -26,7 +26,7 @@ const Main = ({movie}) => {
             />
             <div className={styles.main}
             style={{
-                backgroundImage: `url(${movie.mainImage})`, 
+                backgroundImage: `url(${cover?.[1]?.imageUrl || '#'})`, 
                 width: isSidebarShown ? '90%' : '95%',
             }}>
                 {activeTab === 1 ? (

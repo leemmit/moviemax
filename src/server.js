@@ -2,7 +2,7 @@ const API_URL_POPULAR = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/coll
 const API_KEY = '1e279e5c-06e0-48be-961d-c42909f95716'
 
 // Функция для получения данных о фильмах
-export const getMovies = (url) => {
+export const getData = (url) => {
     return fetch(url, {
         headers: {
             "Content-Type": "application/json",
@@ -10,6 +10,17 @@ export const getMovies = (url) => {
         },
     }).then(resp => resp.json());
 };
+
+export function trimSentences(text, numSentences) {
+    const sentences = text.match(/[^.!?]+[.!?]+/g);
+
+    if (!sentences || sentences.length <= numSentences) {
+        return text;
+    }
+
+    const trimmedSentences = sentences.slice(0, numSentences).join(' ');
+    return trimmedSentences.trim();
+}
 
 
 

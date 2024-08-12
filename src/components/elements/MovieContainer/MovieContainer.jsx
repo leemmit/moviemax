@@ -1,6 +1,6 @@
 import styles from './MovieContainer.module.scss'
 import { useState, useEffect } from 'react'
-import { getMovies } from '../../../server'
+import { getData } from '../../../server'
 import { useNavigate } from 'react-router-dom'
 
 const MovieContainer = ({ url, onMovieIdChange }) => {
@@ -11,22 +11,20 @@ const MovieContainer = ({ url, onMovieIdChange }) => {
     useEffect(() => {
         // Создаем асинхронную функцию внутри useEffect
         const fetchMovies = async () => {
-            const data = await getMovies(url);
+            const data = await getData(url);
             setMovies(data.films || data.items); // Сохраняем массив фильмов в состоянии
         };
 
         fetchMovies(); // Вызываем асинхронную функцию
     }, [url]); // Добавляем url в зависимости, чтобы обновлять данные при изменении URL
 
-    const handleMovieClick = ({ID}) => {
-        console.log(ID)
-        if (id !== 0){
+    const handleMovieClick = (ID) => {
+        if (ID !== 0 && ID !== id){
             setId(ID);
             onMovieIdChange(ID);
             navigate('/movie');
         }
     }
-
 
     return (
         <div className={styles.movies}>
@@ -34,7 +32,7 @@ const MovieContainer = ({ url, onMovieIdChange }) => {
                 <div 
                 key={movie.kinopoiskId || movie.filmId} 
                 className={styles.movie}
-                onClick={handleMovieClick(movie.kinopoiskId || movie.filmId)}
+                onClick={() => handleMovieClick(movie.kinopoiskId || movie.filmId)}
                 >
                     <div className={styles.movie_wrapper}>
                         <img
