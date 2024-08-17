@@ -12,6 +12,8 @@ export const getData = (url) => {
 };
 
 export function trimSentences(text, numSentences) {
+    console.log(text)
+    if (!text) return 0;
     const sentences = text.match(/[^.!?]+[.!?]+/g);
 
     if (!sentences || sentences.length <= numSentences) {

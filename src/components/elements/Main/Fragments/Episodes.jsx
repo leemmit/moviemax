@@ -1,5 +1,5 @@
 import { DATA } from '../../../../data'
-import styles from './Episodes.module.scss'
+import styles from '../Main.module.scss'
 import '../../../UI/FlickitySlider/flickity.css'
 import Flickity from 'react-flickity-component';
 
@@ -10,7 +10,7 @@ const flickityOptions = {
 
 const Episodes = ({movie}) => {
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.episodes}>
             <img src={movie.logo} alt={movie.name} width='200' style={{opacity: .7}}/>
             <div className={styles.title}>
                 <label htmlFor="">

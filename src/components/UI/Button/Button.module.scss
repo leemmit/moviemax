@@ -15,10 +15,12 @@
     width: 150px;
     transition: all .3s;
 
-    > i {
+    i {
         font-size: 28px;
-        margin-right: 0.4rem;
-        margin-bottom: 0.1rem;
+        margin: 0.1rem 0.4rem ;
+        transition: .5s all ease;
+        // margin-right: 0.4rem;
+        // margin-bottom: 0.1rem;
     }
 
     &:hover{
