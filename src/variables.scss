@@ -19,3 +19,21 @@ $bg: #0f1011;
 		rotate: 10deg;
 	}
 }
+
+@keyframes swipeLeft {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes swipeRight {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}

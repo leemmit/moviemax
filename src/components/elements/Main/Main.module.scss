@@ -76,7 +76,7 @@
             line-height: 2;
             padding: 3.5rem 0 2rem 1rem;
             font-size: 18px;
-            transition: .4s all ease;
+            animation: swipeLeft .3s ease-in-out forwards;
 
             > a {
                 display: block;

@@ -31,7 +31,8 @@ const Movie_page = ({ movieId }) => {
     
         fetchData(); // Вызываем асинхронную функцию
     }, [URL_INFO_MOVIE, URL_COVER_MOVIE]); // Добавляем оба URL в зависимости
-
+    console.log(movieData)
+    console.log(movieCover)
     return (
         <>
             <Main movie={movieData} cover={movieCover}/>

@@ -11,7 +11,7 @@ const Information = ({movie}) => {
 
     const addToFavourites = (movieID) => {
         let favourites = localStorage.getItem('favMovies')
-        console.log(favourites);
+        //console.log(favourites);
 
         if (favourites) {
             favourites = JSON.parse(favourites)
@@ -25,7 +25,6 @@ const Information = ({movie}) => {
             console.log('video is opened')
         }
     }
-    console.log(movie)
 
 // localStorage.getItem('favMovies') для вывода
 
@@ -47,21 +46,14 @@ const Information = ({movie}) => {
             </div>
 
             <div className={!linksShown ? styles.description : styles.transparent}>{trimSentences(movie.description, 2)}</div>
-            {/* <div className={styles.description}>{movie.description}</div> */}
 
             <div className={styles.buttons}>
                 <Button cb={() => setLinksShown(!linksShown)}> {/* 23:50 */}
-                    <i 
-                    className={linksShown ? 'bx bx-x' : 'bx bx-play'} 
-                    style={{color: '#c62e21'}}
-                    ></i>
+                    <i className={linksShown ? 'bx bx-x' : 'bx bx-play'} style={{color: '#c62e21'}}></i>
                     <span>{linksShown ? 'Close' : 'Play'}</span>
-                    <i 
-                    className={linksShown ? 'bx bx-x' : ''} 
-                    style={{color: '#c62e21'}}
-                    ></i>
+                    <i className={linksShown ? 'bx bx-x' : ''} style={{color: '#c62e21'}}></i>
                 </Button>
-                <Button cb={addToFavourites(movie.id)}>
+                <Button cb={addToFavourites(movie.kinopoiskId)}>
                     <i className="bx bx-plus"></i>
                     <span>My list</span>
                 </Button>
@@ -69,7 +61,7 @@ const Information = ({movie}) => {
 
             <div className={linksShown ? styles.links : styles.hidden}>
                 {links.map(link => (
-                    <a href={link + movie.kinopoiskId}>{link + movie.kinopoiskId}</a>
+                    <a target="_blank" href={link + movie.kinopoiskId}>{link + movie.kinopoiskId}</a>
                 ))}
             </div>
         </div>
