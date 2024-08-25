@@ -1,7 +1,7 @@
 import styles from '../Main.module.scss'
 import Button from '../../../UI/Button/Button'
 import { trimSentences } from '../../../../server'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const links = ['https://www.sspoisk/film/', 'https://www.ggpoisk/film/', 'https://www.kinopoisk.cx/film/', 'https://www.kinopoisk.vip/film/']
 
@@ -9,22 +9,47 @@ const links = ['https://www.sspoisk/film/', 'https://www.ggpoisk/film/', 'https:
 const Information = ({movie}) => {
     const [linksShown, setLinksShown] = useState(false);
 
-    const addToFavourites = (movieID) => {
-        let favourites = localStorage.getItem('favMovies')
-        //console.log(favourites);
+    const [favourites, setFavourites] = useState(() => JSON.parse(localStorage.getItem('favMovies')) || []);
 
-        if (favourites) {
-            favourites = JSON.parse(favourites)
-            localStorage.setItem('favMovies', [...favourites, movieID])
-            alert(`${movieID} теперь в избранном!`)
-        }
-    }
+    useEffect(() => {
+        localStorage.setItem('favMovies', JSON.stringify(favourites));
+    }, [favourites]);
 
-    const setModuleShow = (par) => {
-        if (par) {
-            console.log('video is opened')
-        }
-    }
+    const isInFavourites = (movie, list) => {
+        return list.some(fav => fav.kinopoiskId === movie.kinopoiskId);
+    };
+
+    const addToFavourites = (movie) => {
+        setFavourites(prev => 
+            isInFavourites(movie, prev) 
+                ? prev 
+                : [...prev, movie]
+        );
+    };
+
+    // const [favourites, setFavourites] = useState(() => {
+    //     return JSON.parse(localStorage.getItem('favourites')) || [];
+    // });
+
+    // useEffect(() => {
+    //     localStorage.setItem('favourites', JSON.stringify(favourites));
+    // }, [favourites]);
+
+    // const addToFavourites = (movie) => {
+    //     let favourites = localStorage.getItem('favMovies');
+    
+    //     if (favourites) {
+    //         favourites = JSON.parse(favourites); // Парсим строку JSON в массив
+    //         favourites.push(movie); // Добавляем новый фильм в массив
+    //         localStorage.setItem('favMovies', JSON.stringify(favourites)); // Сохраняем обновленный массив как строку JSON
+    //     } else {
+    //         // Если в избранных еще нет фильмов, создаем новый массив с одним фильмом и сохраняем его
+    //         localStorage.setItem('favMovies', JSON.stringify([movie]));
+    //     }
+    
+    //     alert(`${movie.nameRu || movie.nameEn || movie.nameOriginal} теперь в избранном!`);
+    // };
+    
 
 // localStorage.getItem('favMovies') для вывода
 
@@ -53,8 +78,13 @@ const Information = ({movie}) => {
                     <span>{linksShown ? 'Close' : 'Play'}</span>
                     <i className={linksShown ? 'bx bx-x' : ''} style={{color: '#c62e21'}}></i>
                 </Button>
-                <Button cb={addToFavourites(movie.kinopoiskId)}>
-                    <i className="bx bx-plus"></i>
+                <Button 
+                cb={() => addToFavourites(movie)}
+                className={isInFavourites(movie, favourites) ? styles.active : ''}
+                style={{background: '#fff !important'}}
+                >
+                {/* <Button> */}
+                    <i className={isInFavourites(movie, favourites) ? 'bx bx-check' : 'bx bx-plus'}></i>
                     <span>My list</span>
                 </Button>
             </div>

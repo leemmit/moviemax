@@ -1,12 +1,14 @@
-import styles from './MovieContainer.module.scss'
+import styles_S from './MovieContainer_S.module.scss'
+import styles_L from './MovieContainer_L.module.scss'
 import { useState, useEffect } from 'react'
 import { getData } from '../../../server'
 import { useNavigate } from 'react-router-dom'
 
-const MovieContainer = ({ url, onMovieIdChange }) => {
+const MovieContainer = ({ url, onMovieIdChange, useStyleL = false }) => {
     const [movies, setMovies] = useState([]);
     const [id, setId] = useState(0)
     const navigate = useNavigate();
+    const styles = useStyleL ? styles_L : styles_S;
 
     useEffect(() => {
         // Создаем асинхронную функцию внутри useEffect

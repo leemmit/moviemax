@@ -59,7 +59,7 @@
             color: $gray;
             margin-bottom: 2rem;
             line-height: 1.5;
-            transition: .4s all ease;
+            transition: .3s all ease;
         }
         .transparent {
             color: transparent;
@@ -71,17 +71,21 @@
 
         .links {
             position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            width: 700px;
             top: 0;
             left: 0;
-            line-height: 2;
-            padding: 3.5rem 0 2rem 1rem;
+            line-height: 2.5;
+            padding: 3.5rem 0 0 1rem;
             font-size: 18px;
-            animation: swipeLeft .3s ease-in-out forwards;
+            animation: swipeLeft .1s ease-in-out forwards;
 
             > a {
                 display: block;
                 color: $gray;
                 transition: .3s ease;
+                margin: 0 2rem 0 0;
 
                 &:hover {
                     color: #fff;

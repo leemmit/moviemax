@@ -1,9 +1,9 @@
 import MoviePage from "./pages/MoviePage";
 import Header from "./components/elements/Header/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NotificationPage from "./pages/NotificationPage";
 import ListMoviePage from "./pages/ListMoviePage";
 import { useState } from "react";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
@@ -14,7 +14,7 @@ function App() {
       <Router>
           <Header onSearchChange={setSearchValue}/>
           <Routes>
-              <Route exact path="/" Component={NotificationPage} />
+              <Route exact path="/" Component={() => <HomePage onMovieIdChange={setMovieId} />} />
               <Route exact path="/list" Component={() => <ListMoviePage searchValue={searchValue} onMovieIdChange={setMovieId} />} />
               <Route exact path="/movie" Component={() => <MoviePage movieId={movieId} />} />
           </Routes>

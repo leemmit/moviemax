@@ -1,7 +1,10 @@
 const API_URL_POPULAR = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_250_MOVIES&page=1'
+const API_URL_KEYWORD = 'https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword'
 const API_KEY = '1e279e5c-06e0-48be-961d-c42909f95716'
 const URL_404 = 'https://avatars.mds.yandex.net/i?id=585c6a06626f35894b355ca4f30b4e79_l-5235574-images-thumbs&n=13'
 
+export const getUrlPopular = () => API_URL_POPULAR
+export const getUrlKeyword = () => API_URL_KEYWORD
 export const getURL404 = () => URL_404
 
 // Функция для получения данных о фильмах

@@ -52,9 +52,6 @@ const Main = ({movie, cover}) => {
         localStorage.setItem('activeTab', activeTab);
     }, [activeTab]);
     
-    console.log(movie)
-    console.log(currentMovie)
-    
 
     // const [activeTab, setActiveTab] = useState(() => {
     //     return Number(localStorage.getItem('activeTab')) || 1;
