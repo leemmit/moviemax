@@ -5,7 +5,7 @@ import Information from './Fragments/Information'
 import BottomNavigation from '../../UI/BottomNavigation/BottomNavigation'
 import Episodes from './Fragments/Episodes'
 import Details from './Fragments/Details'
-import { getURL404 } from '../../../server'
+import { getURL404, url404 } from '../../../server'
 //import Movie404 from '../../UI/Movie404/Movie404'
 
 const tabs = [
@@ -70,7 +70,7 @@ const Main = ({movie, cover}) => {
             />
             <div className={styles.fragments}
             style={{
-                backgroundImage: `url(${cover?.[1]?.imageUrl || cover?.[0]?.imageUrl || getURL404()})`, 
+                backgroundImage: `url(${cover?.[1]?.imageUrl || cover?.[0]?.imageUrl || url404})`, 
                 backgroundPosition: 'center',
                 width: isSidebarShown ? '90%' : '95%',
             }}>
