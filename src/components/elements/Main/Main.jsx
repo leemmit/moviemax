@@ -5,8 +5,7 @@ import Information from './Fragments/Information'
 import BottomNavigation from '../../UI/BottomNavigation/BottomNavigation'
 import Episodes from './Fragments/Episodes'
 import Details from './Fragments/Details'
-import { getURL404, url404 } from '../../../server'
-//import Movie404 from '../../UI/Movie404/Movie404'
+import { url404 } from '../../../server'
 
 const tabs = [
     {
@@ -23,7 +22,7 @@ const tabs = [
     },
 ]
 
-const Main = ({movie, cover}) => {
+const Main = ({movie, cover, actors}) => {
     const [isSidebarShown, setIsSidebarShown] = useState(false);
 
     //           MOVIE
@@ -68,21 +67,18 @@ const Main = ({movie, cover}) => {
                 isSidebarShown={isSidebarShown} 
                 setIsSidebarShown={setIsSidebarShown} 
             />
+
             <div className={styles.fragments}
             style={{
                 backgroundImage: `url(${cover?.[1]?.imageUrl || cover?.[0]?.imageUrl || url404})`, 
                 backgroundPosition: 'center',
                 width: isSidebarShown ? '90%' : '95%',
             }}>
-                <img
-                src={currentMovie.logo || currentMovie.logoUrl} 
-                alt={currentMovie.name || currentMovie.nameEn || currentMovie.nameOriginal} 
-                width='200' 
-                style={{opacity: .7}}
-                />
+                
                 {activeTab === 1 ? ( <Information movie={currentMovie} />) 
-                : (activeTab === 2 ? <Episodes movie={currentMovie}/> : <Details movie={currentMovie}/>) }
+                : (activeTab === 2 ? <Episodes movie={currentMovie}/> : <Details movie={currentMovie} actorsList={actors}/>) }
             </div>
+
             <BottomNavigation 
             tabs={currentMovie.type === 'TV_SERIES' ? tabs : tabs.filter(tab => tab.name !== 'Episodes')} 
             activeTab={activeTab} 

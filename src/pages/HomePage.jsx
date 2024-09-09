@@ -1,10 +1,10 @@
 import MovieContainer from "../components/elements/MovieContainer/MovieContainer";
-import { apiUrlPopular } from "../server";
+import { kinopoiskUrlPopular } from "../server";
 
 const HomePage = ({ onMovieIdChange }) => {
     return (
         <div>
-            <MovieContainer url={apiUrlPopular} onMovieIdChange={onMovieIdChange} useStyleL={true}/>
+            <MovieContainer url={kinopoiskUrlPopular} onMovieIdChange={onMovieIdChange} useStyleL={true}/>
         </div>
     );
 }

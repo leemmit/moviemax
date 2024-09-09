@@ -4,13 +4,14 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    min-height: 480px;  
+    height: 80vh;  
     //min-height: 90vh;
 
     .fragments {
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
+        padding-left: 1rem;
 
         &::before {
             content: '';
@@ -21,17 +22,12 @@
             top: 0;
             left: 0;
         }
-
-        > img {
-            padding: 3rem 0 0 1rem;
-        }
     }
 
     .info {
         position: relative;
         z-index: 1;
         width: 600px;
-        padding-left: 1rem;
         transition: cubic-bezier(.25,.1,.25,1);
 
         .additional {
@@ -134,5 +130,32 @@
         }
     }
     
+    .details {
+        position: relative;
+        display: flex;
+
+        span {
+            display: block;
+            color: $gray;
+        }
+
+        > .about {
+            max-width: 40%;
+        }
+
+        > .actors {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10% auto 0;
+
+            > .actor {
+                padding: 0 2.5rem 1rem 0;
+                > img {
+                    max-width: 150px;
+                }
+            }
+        }
+
+    }
     
 }

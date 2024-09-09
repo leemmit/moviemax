@@ -59,6 +59,13 @@ const Information = ({movie}) => {
     return (
         <div className={styles.info}>
 
+            <img
+                src={movie.logo || movie.logoUrl} 
+                alt={movie.name || movie.nameEn || movie.nameOriginal} 
+                width='200' 
+                style={{opacity: .7, padding: '3rem 0 0 1rem'}}
+            />
+
             <div className={styles.additional}>
                 <span>{movie.year}</span>
                 {!(movie.limitAge || movie.ratingAgeLimits) ? '' : (
@@ -70,7 +77,7 @@ const Information = ({movie}) => {
                 )}</span>
             </div>
 
-            <div className={!linksShown ? styles.description : styles.transparent}>{trimSentences(movie.description, 2)}</div>
+            <div className={!linksShown ? styles.description : styles.transparent}>{trimSentences(movie.description, 300)}</div>
 
             <div className={styles.buttons}>
                 <Button cb={() => setLinksShown(!linksShown)}> {/* 23:50 */}

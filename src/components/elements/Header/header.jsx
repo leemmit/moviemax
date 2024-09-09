@@ -6,7 +6,7 @@ const Header = ({ onSearchChange }) => {
     return (
         <div className={styles.header}>
             <div>
-                <a href="/list">
+                <a href="/">
                     <img 
                     src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" 
                     alt="Netflix"
