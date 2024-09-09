@@ -3,6 +3,7 @@ import styles_L from './MovieContainer_L.module.scss'
 import { useState, useEffect } from 'react'
 import { getData } from '../../../server'
 import { useNavigate } from 'react-router-dom'
+import { scrollToTop } from '../../../server'
 
 const MovieContainer = ({ url, onMovieIdChange, useStyleL = false }) => {
     const [movies, setMovies] = useState([]);
@@ -34,7 +35,7 @@ const MovieContainer = ({ url, onMovieIdChange, useStyleL = false }) => {
                 <div 
                 key={movie.kinopoiskId || movie.filmId} 
                 className={styles.movie}
-                onClick={() => handleMovieClick(movie.kinopoiskId || movie.filmId)}
+                onClick={() => {handleMovieClick(movie.kinopoiskId || movie.filmId); scrollToTop()}}
                 >
                     <div className={styles.movie_wrapper}>
                         <img

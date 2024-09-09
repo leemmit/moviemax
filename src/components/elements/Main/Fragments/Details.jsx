@@ -8,19 +8,31 @@ const Details = ({movie, actorsList}) => {
                     src={movie.logo || movie.logoUrl} 
                     alt={movie.name || movie.nameEn || movie.nameOriginal} 
                     width='200' 
-                    style={{opacity: .7, padding: '3rem 0 0 1rem'}}
+                    style={{opacity: .7, color: '#fff'}}
                 />
 
-                <span>Год: {movie.year}</span>
-                <span>Страна: {movie.countries?.map(el => el.country)}</span>
-                <span>Жанр: {movie.genres?.map(el => el.genre).join(', ')}</span>
-                <span>Слоган: {movie.slogan}</span>
-                <span>Режиссер: </span>
-                <span>Бюджет: </span>
-                <span>Сборы: </span>
-                <span>Возраст: </span>
-                <span>Рейтинг: </span>
-                <span>Время: </span>
+                <div className={styles.about_info}>
+                    <span>Год: {movie.year}</span>
+                    <span>Страна: {movie.countries?.map(el => el.country).join(', ')}</span>
+                    <span>Жанр: {movie.genres?.map(el => el.genre).join(', ')}</span>
+                    <span>Слоган: {movie.slogan}</span>
+                    <span>Режиссер: {
+                    actorsList
+                    .filter(actor => actor.professionKey === 'DIRECTOR')
+                    .slice(0, 3)
+                    .map(actor => actor.nameRu)
+                    .join(', ')
+                    }</span>
+                    {!(movie.limitAge || movie.ratingAgeLimits) ? '' : (
+                    <span className={styles.limitAge} >Возраст: {movie.limitAge || movie.ratingAgeLimits?.slice(3)}+</span>
+                    )}
+                    <span>Рейтинг: {movie.ratingKinopoisk || movie.ratingImdb}</span>
+                    <span>Время: {movie.duration || (
+                        `${Math.floor(movie.filmLength / 60)? Math.floor(movie.filmLength / 60) + 'ч ' : ''} ${movie.filmLength % 60}мин`
+                    )}</span>
+                </div>
+
+                
             </div>
             <div className={styles.actors}>
                 {actorsList

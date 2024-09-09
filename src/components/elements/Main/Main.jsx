@@ -49,6 +49,10 @@ const Main = ({movie, cover, actors}) => {
     
     useEffect(() => {
         localStorage.setItem('activeTab', activeTab);
+
+        return  () => {
+            localStorage.setItem('activeTab', 1)
+        }
     }, [activeTab]);
     
 

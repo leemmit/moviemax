@@ -68,4 +68,11 @@ export function trimSentences(text, maxLength) {
     return trimmedText.trim();
 }
 
+export function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
 

@@ -141,17 +141,37 @@
 
         > .about {
             max-width: 40%;
+            padding: 3rem 0 0 1rem;
+
+            .about_info {
+                padding-top: 2rem;
+                font-size: 18px;
+                line-height: 1.5;
+            }
         }
 
         > .actors {
+            position: absolute;
+            right: 0;
             display: flex;
             flex-wrap: wrap;
-            margin: 10% auto 0;
+            margin: 10% 0 0 5%;
 
             > .actor {
-                padding: 0 2.5rem 1rem 0;
+                margin: 0 2rem 1rem 0;
+                padding-bottom: .5rem;
+                background-color: rgba($bg, 0.8);
+                border-radius: 15px;
+                overflow: hidden;
+                max-width: 100%;
+
+                > span {
+                    padding: 0.3rem 0 0.3rem 1rem;
+                }
+
                 > img {
-                    max-width: 150px;
+                    max-height: 250px;
+                    border-radius: 15px;
                 }
             }
         }
