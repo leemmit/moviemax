@@ -47,8 +47,9 @@ export function trimSentences(text, maxLength) {
 
     // Разбиваем текст на предложения
     const sentences = text.match(/[^.!?]*[.!?]/g);
+    console.log('sentences: ' + sentences)
 
-    if (!sentences) return text; // Если нет предложений, возвращаем исходный текст
+    if (!sentences || sentences.length === 1) return text; // Если нет предложений, возвращаем исходный текст
 
     let trimmedText = '';
     let totalLength = 0;
