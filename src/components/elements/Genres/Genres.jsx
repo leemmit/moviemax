@@ -6,9 +6,18 @@ const Genres = ( {genresList} ) => {
             {genresList.map(genre => (
                 <div 
                 className={styles.genrePoster}
-                style={{backgroundImage: `url(${genre.background[Math.floor(Math.random() * 5)]})  `}}
+                onMouseEnter={(e) => {
+                    e.currentTarget.querySelector(`.${styles.bgImg}`).style.transform = 'scale(1.1)';
+                  }}
+                onMouseLeave={(e) => {
+                e.currentTarget.querySelector(`.${styles.bgImg}`).style.transform = 'scale(1.0)';
+                }}
                 >
-                    <span>{genre.name}</span>
+                    <div 
+                    className={styles.bgImg}
+                    style={{backgroundImage: `url(${genre.background[Math.floor(Math.random() * 5)]})  `}}
+                    />
+                    <h1>{genre.name}</h1>
                 </div>
             ))}
         </div>

@@ -12,8 +12,27 @@
         width: 290px;
         background-size: cover;
         position: relative;
+        cursor: pointer;
+        text-align: center;
+        background: cover no-repeat;
+        overflow: hidden;
 
-        &::after {
+        .bgImg {
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            transition: all ease .4s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        &::before {
             content: "";
             position: absolute;
             top: 0;
@@ -21,6 +40,23 @@
             background: linear-gradient(to bottom, transparent, $bg 100%);
             width: 100%;
             height: 100%;
+            z-index: 1;
         }
+
+        h1 {
+            position: relative;
+            color: #ffffffca;
+            //margin-top: 20%;
+            padding-top: 20%;
+            text-shadow: #000 0 6px 8px;
+            z-index: 2;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        // &:hover.bgImg {
+        //     transform: scale(1.2);
+        // }
+        
     }
 }
