@@ -58,13 +58,17 @@ const Information = ({movie}) => {
 
     return (
         <div className={styles.info}>
-
-            <img
-                src={movie.logo || movie.logoUrl} 
-                alt={movie.name || movie.nameEn || movie.nameOriginal} 
-                width='200' 
-                style={{opacity: .7, padding: '3rem 0 0 1rem'}}
-            />
+            {!(movie.logo || movie.logoUrl) ? (
+                <h2>{movie.nameEn || movie.nameOriginal}</h2>
+            ) : (
+                <img
+                    src={movie.logo || movie.logoUrl} 
+                    alt={movie.name || movie.nameEn || movie.nameOriginal} 
+                    width='200' 
+                    style={{opacity: .7, padding: '3rem 0 0 1rem'}}
+                />
+            )}
+            
 
             <div className={styles.additional}>
                 <span>{movie.year}</span>
@@ -90,7 +94,6 @@ const Information = ({movie}) => {
                 className={isInFavourites(movie, favourites) ? styles.active : ''}
                 style={{background: '#fff !important'}}
                 >
-                {/* <Button> */}
                     <i className={isInFavourites(movie, favourites) ? 'bx bx-check' : 'bx bx-plus'}></i>
                     <span>My list</span>
                 </Button>

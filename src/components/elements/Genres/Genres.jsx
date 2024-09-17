@@ -8,10 +8,11 @@ const Genres = ( {genresList} ) => {
                 className={styles.genrePoster}
                 onMouseEnter={(e) => {
                     e.currentTarget.querySelector(`.${styles.bgImg}`).style.transform = 'scale(1.1)';
-                  }}
-                onMouseLeave={(e) => {
-                e.currentTarget.querySelector(`.${styles.bgImg}`).style.transform = 'scale(1.0)';
                 }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.querySelector(`.${styles.bgImg}`).style.transform = 'scale(1.0)';
+                }}
+                key={genre.name}
                 >
                     <div 
                     className={styles.bgImg}

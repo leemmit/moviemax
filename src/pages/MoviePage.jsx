@@ -1,25 +1,25 @@
 import Main from "../components/elements/Main/Main.jsx";
 import MyList from "../components/elements/MyList/MyList.jsx";
 import { useState, useEffect } from 'react'
-import { getData } from '../server.js'
+import { getData, URL_INFO_MOVIE, URL_COVER_MOVIE, URL_ACTORS_MOVIE } from '../server.js'
 
 const Movie_page = ({ movieId }) => {
     const [movieData, setMovieData] = useState([])
     const [movieCover, setMovieCover] = useState('')
     const [movieActors, setMovieActors] = useState([])
 
-    const URL_INFO_MOVIE = `https://kinopoiskapiunofficial.tech/api/v2.2/films/${movieId}`
-    const URL_COVER_MOVIE = `https://kinopoiskapiunofficial.tech/api/v2.2/films/${movieId}/images?type=STILL&page=1`
-    const URL_ACTORS_MOVIE = `https://kinopoiskapiunofficial.tech/api/v1/staff?filmId=${movieId}`
+    const urlInfoMovie = URL_INFO_MOVIE(movieId)
+    const urlCoverMovie = URL_COVER_MOVIE(movieId)
+    const urlActorsMovie = URL_ACTORS_MOVIE(movieId)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 // Запрашиваем данные параллельно
                 const [data, cover, actors] = await Promise.all([
-                    getData(URL_INFO_MOVIE),
-                    getData(URL_COVER_MOVIE),
-                    getData(URL_ACTORS_MOVIE)
+                    getData(urlInfoMovie),
+                    getData(urlCoverMovie),
+                    getData(urlActorsMovie)
                 ]);
     
                 // Устанавливаем состояния
@@ -32,9 +32,8 @@ const Movie_page = ({ movieId }) => {
         };
     
         fetchData(); // Вызываем асинхронную функцию
-    }, [URL_INFO_MOVIE, URL_COVER_MOVIE, URL_ACTORS_MOVIE]); // Добавляем оба URL в зависимости
-    console.log(movieData)
-    console.log(movieCover)
+    }, [urlInfoMovie, urlCoverMovie, urlActorsMovie]); // Добавляем оба URL в зависимости
+    
     return (
         <>
             <Main movie={movieData} cover={movieCover} actors={movieActors}/>

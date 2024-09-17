@@ -3,10 +3,17 @@ const rapidapiHost = process.env.REACT_APP_RAPIDAPI_HOST;
 
 const kinopoiskKey = process.env.REACT_APP_KINOPOISK_KEY;
 export const kinopoiskUrlPopular = process.env.REACT_APP_KINOPOISK_URL_POPULAR;
-// export const kinopoiskUrlPopular = 'https://moviesdatabase.p.rapidapi.com/titles/random';
-// export const kinopoiskUrlKeyword = 'https://moviesdatabase.p.rapidapi.com/titles/search/title/%7Btitle%7D?exact=true&titleType=movie';
 export const kinopoiskUrlKeyword = process.env.REACT_APP_KINOPOISK_URL_KEYWORD;
+export const kinopoiskUrlClosesReleases = process.env.REACT_APP_KINOPOISK_URL_CLOSES_RELEASES;
 export const url404 = process.env.REACT_APP_URL_404;
+
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const now = new Date();
+
+export const URL_INFO_MOVIE = (movieId) => `https://kinopoiskapiunofficial.tech/api/v2.2/films/${movieId}`
+export const URL_COVER_MOVIE = (movieId) => `https://kinopoiskapiunofficial.tech/api/v2.2/films/${movieId}/images?type=STILL&page=1`
+export const URL_ACTORS_MOVIE = (movieId) => `https://kinopoiskapiunofficial.tech/api/v1/staff?filmId=${movieId}`
+export const URL_PREMIERES_MOVIE = `https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=${now.getFullYear()}&month=${months[now.getMonth()-1].toUpperCase()}`
 
 const options = [{
     headers: {

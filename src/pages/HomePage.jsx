@@ -1,6 +1,7 @@
-import MovieContainer from "../components/elements/MovieContainer/MovieContainer";
-import { kinopoiskUrlPopular } from "../server";
+import { getData, URL_COVER_MOVIE, URL_PREMIERES_MOVIE } from "../server";
 import Genres from "../components/elements/Genres/Genres";
+import BigMoviePoster from "../components/UI/BigMoviePoster/BigMoviePoster";
+import { useState, useEffect } from "react";
 
 const genresList = [
     {
@@ -43,9 +44,53 @@ const genresList = [
 ]
 
 const HomePage = ({ onMovieIdChange }) => {
+    const [movies, setMovies] = useState([]);
+    const [movieCover, setMovieCover] = useState('')
+    
+    //const url = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2024&month=AUGUST'
+    const url = URL_PREMIERES_MOVIE;
+
+    useEffect(() => {
+        const fetchMoviesData = async () => {
+            try {
+                const data = await getData(url);
+                console.log('data', data)
+                setMovies(data.films || data.items);
+            } catch (error) {
+                console.error('Error fetching movies ', error);
+            }
+        };
+
+        fetchMoviesData();
+    }, [url]);
+    console.log('movies', movies)
+    const moviesSorted = movies.filter(mov => mov.type !== "TV_SERIES");
+    const moviePoster = moviesSorted[0];
+
+    const urlCoverMovie = moviePoster ? URL_COVER_MOVIE(moviePoster.kinopoiskId) : '';
+
+    useEffect(() => {
+        const fetchMovieCoverData = async () => {
+            try {
+                const data = await getData(urlCoverMovie);
+                setMovieCover(data.items);
+            } catch (error) {
+                console.error('Error fetching movie cover ', error);
+            }
+        };
+
+        if (urlCoverMovie) {
+            fetchMovieCoverData();
+        }
+    }, [urlCoverMovie]);
+
+    console.log('movieCover ', movieCover)
+    
+
     return (
         <div>
             {/* <MovieContainer url={kinopoiskUrlPopular} onMovieIdChange={onMovieIdChange} useStyleL={true}/> */}
+            <BigMoviePoster movie={moviePoster} cover={movieCover} />
             <Genres genresList={genresList} />
         </div>
     );

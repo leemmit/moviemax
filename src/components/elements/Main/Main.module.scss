@@ -30,6 +30,13 @@
         width: 600px;
         transition: cubic-bezier(.25,.1,.25,1);
 
+        h2 {
+            color: $gray;
+            margin: 2rem 0 2rem 1rem;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
         .additional {
             display: flex;
             align-items: center;
@@ -55,6 +62,7 @@
             color: $gray;
             margin-bottom: 2rem;
             line-height: 1.5;
+            text-shadow: $bg 4px 2px 6px;
             transition: .3s all ease;
         }
         .transparent {

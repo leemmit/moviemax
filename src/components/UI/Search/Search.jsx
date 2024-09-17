@@ -20,6 +20,10 @@ const Search = ({ onSearchChange }) => {
         }
     };
 
+    const enterSearch = (event) => {
+        if (event.key === 'Enter') handleSearchClick();
+    }
+
     return (
         <div className={styles.search}>
             <div>
@@ -30,6 +34,7 @@ const Search = ({ onSearchChange }) => {
                 type="text" 
                 placeholder='I`m searching for...'
                 onChange={handleInputChange}
+                onKeyDown={enterSearch}
                 value={value}
                 />
             </div>
