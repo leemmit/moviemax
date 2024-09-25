@@ -5,7 +5,7 @@ import { getData } from '../../../server'
 import { useNavigate } from 'react-router-dom'
 import { scrollToTop } from '../../../server'
 
-const MovieContainer = ({ url, onMovieIdChange, useStyleL = false }) => {
+const MovieContainer = ({ url, onMovieIdChange }) => {
     const [movies, setMovies] = useState([]);
     const [id, setId] = useState(0)
     const navigate = useNavigate();
