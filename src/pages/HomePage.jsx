@@ -1,7 +1,8 @@
-import { getData, URL_COVER_MOVIE, URL_PREMIERES_MOVIE } from "../server";
+import { getData, URL_COVER_MOVIE, URL_PREMIERES_MOVIE, URL_PREMIERE_NOW, fetchMoviesData } from "../server";
 import Genres from "../components/elements/Genres/Genres";
 import BigMoviePoster from "../components/UI/BigMoviePoster/BigMoviePoster";
 import { useState, useEffect } from "react";
+import MyList from "../components/elements/MyList/MyList";
 
 const genresList = [
     {
@@ -46,14 +47,20 @@ const genresList = [
 const HomePage = ({ onMovieIdChange }) => {
     const [movies, setMovies] = useState([]);
     const [movieCover, setMovieCover] = useState('')
+
+    //             BigMoviePoster
     
     //const url = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2024&month=AUGUST'
-    const url = URL_PREMIERES_MOVIE;
+    //const url = URL_PREMIERES_MOVIE;
+    //const urlPopular = URL_PREMIERE_NOW;
+    const urlPopular = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_MOVIES&page=1';
+
+    
 
     useEffect(() => {
         const fetchMoviesData = async () => {
             try {
-                const data = await getData(url);
+                const data = await getData(urlPopular);
                 console.log('data', data)
                 setMovies(data.films || data.items);
             } catch (error) {
@@ -62,11 +69,13 @@ const HomePage = ({ onMovieIdChange }) => {
         };
 
         fetchMoviesData();
-    }, [url]);
-    console.log('movies', movies)
+    }, [urlPopular]);
+    
+
+    //        Обложка для BigMoviePoster
+    console.log(movies);
     const moviesSorted = movies.filter(mov => mov.type !== "TV_SERIES");
     const moviePoster = moviesSorted[0];
-
     const urlCoverMovie = moviePoster ? URL_COVER_MOVIE(moviePoster.kinopoiskId) : '';
 
     useEffect(() => {
@@ -84,14 +93,15 @@ const HomePage = ({ onMovieIdChange }) => {
         }
     }, [urlCoverMovie]);
 
-    console.log('movieCover ', movieCover)
-    
+    const favourites = JSON.parse(localStorage.getItem('favMovies'));
 
     return (
         <div>
             {/* <MovieContainer url={kinopoiskUrlPopular} onMovieIdChange={onMovieIdChange} useStyleL={true}/> */}
             <BigMoviePoster movie={moviePoster} cover={movieCover} />
             <Genres genresList={genresList} />
+            <MyList list={favourites} listTitle={'My List'} />
+            <MyList list={movies} listTitle={'Popular'} />
         </div>
     );
 }

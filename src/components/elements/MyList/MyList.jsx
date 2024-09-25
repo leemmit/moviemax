@@ -4,17 +4,16 @@ import { DATA } from '../../../data'
 import '../../UI/FlickitySlider/flickity.css'
 //import Flickity from 'react-flickity-component';
 
-//let list = localStorage.getItem('favMovies')
-let list = [1, 2, 3, 4];
+
 // const flickityOptions = {
 //     initialIndex: 2
 // }
 
-const MyList = () => {
+const MyList = ({list, listTitle}) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.title}>
-                <h2>My list</h2>
+                <h2>{listTitle}</h2>
                 <button>
                     <span>See All</span>
                     <i className="bx bx-chevron-right"></i>
@@ -22,44 +21,24 @@ const MyList = () => {
             </div>
 
             <div className={styles.listContainer}>
-                {!list ? '' : list.map(iD => (
-                    <div key={iD} className={styles.listWrapper}>
+                {!list ? '' : list.map(item => !item.coverUrl ? '' : (
+                    <div key={item.kinopoiskId} className={styles.listWrapper}>
                         <div className={styles.listItem}>
-                            <img src={DATA.find(item => item.id === iD).mainImage} alt={DATA.find(item => item.id === iD).name} />
-                            <span className={styles.duration}>{DATA.find(item => item.id === iD).duration}</span>
-                            <i className='bx bx-play'></i>
+                            {/* <div className={styles.bgImg} style={{backgroundImage: `url(${item.coverUrl})`}}></div> */}
+                            <img src={item.coverUrl} alt={item.nameRu || item.nameEn || item.nameOriginal} />
+                            <span className={styles.name}>{item.nameRu || item.nameEn || item.nameOriginal}</span>
+                            <span className={styles.duration}>{
+                                `${Math.floor(item.filmLength / 60)? Math.floor(item.filmLength / 60) + 'h ' : ''} ${item.filmLength % 60}min`
+                            }</span>
+                            {/* <i className='bx bx-play'></i> */}
                         </div>
-                        <span className={styles.name}>{DATA.find(item => item.id === iD).name} {DATA.find(item => item.id === iD).rating}&#9733;</span>
+                        {/* <span>{item.ratingKinopoisk || item.ratingImdb}&#9733;</span> */}
                     </div>
                 ))}
-                <div className={styles.blockSeeAll}>
+                {/* <div className={styles.blockSeeAll}>
                     <i className='bx bx-right-arrow-alt' ></i>
-                </div>
+                </div> */}
             </div>
-
-
-
-            {/* <Flickity
-            className='slider'
-            elementType='div'
-            disableImagesLoaded={false}
-            options={flickityOptions}
-            reloadOnUpdate
-            static
-            >
-                {!list ? '' : list.map(iD => (
-                    <div className={styles.item}>
-                        <div className={styles.slide} style={{
-                            backgroundImage: `url(${DATA.find(item => item.id === iD).mainImage})`,
-                            aspectRatio: 16/9,
-                            width: 250,
-                            margin: '0 10px',
-                            backgroundSize: 'cover',
-                        }}
-                        ></div>
-                    </div>
-                ))}
-            </Flickity> */}
         </div>
     );
 }

@@ -1,7 +1,7 @@
 @import '../../../variables';
 
 .wrapper {
-    min-height: 500px;
+    //min-height: 500px;
     overflow: hidden;
 
     .title {
@@ -26,17 +26,6 @@
         }
     }
 
-    .slider {
-        width: 50%;
-
-        .item {
-
-            > div {
-                margin-top: 100px;
-            }
-        }
-    }
-
     .listContainer {
         display: inline-flex;
         margin-left: 2rem;
@@ -46,11 +35,15 @@
             .listItem {
                 position: relative;
                 margin: 0 .5rem;
+                max-width: 150px;
                 cursor: pointer;
+                overflow: hidden;
+                aspect-ratio: 5/7;
+                transition: .6s cubic-bezier(0.075, 0.82, 0.165, 1);
     
                 > img {
-                    aspect-ratio: 16/9;
-                    max-width: 250px;
+                    height: 100%;
+                    margin-left: -20%;
                 }
     
                 &::before {
@@ -59,38 +52,59 @@
                     width: 100%;
                     height: 100%;
                     position: absolute;
-                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                .name, .duration {
+                    position: absolute;
                     left: 0;
+                    bottom: 0;
+                    display: none;
+                    transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                }
+
+                .name {
+                    color: #fff;
+                    font-size: 16px;
+                    margin: 0 0 1.6rem 0.2rem;
+                    max-width: 100%;
+                    cursor: pointer;
                 }
     
                 .duration {
-                    position: absolute;
                     color: $gray;
-                    right: 0;
-                    bottom: 0;
-                    margin-bottom: 0.4rem;
-                    margin-right: 0.3rem;
+                    margin-bottom: 0.6rem;
+                    margin-left: 0.3rem;
+                    font-size: 12px;
                 }
     
                 &:hover {
-                    i {
+                    //transform: translateY(-15%);
+                    animation: upside .7s;
+
+                    @keyframes upside {
+                        0% {
+                            transform: translateY(0%);
+                        }
+                        50% {
+                            transform: translateY(-3%);
+                        }
+                        100%{
+                            transform: translateY(0%);
+                        }
+                    }
+
+                    .name, .duration {
                         display: block;
-                        transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                        animation: opacity .7s;
+                    }
+
+                    &::before {
+                        //height: calc(100% + 3.2rem); /* 1.6rem (bottom margin of .name) + 0.6rem (bottom margin of .duration) + 1rem (extra space) */
+                        //height: 150%;
                     }
                 }
-            }
-
-            .name {
-                display: block;
-                color: #fff;
-                opacity: .8;
-                font-size: 18px;
-                margin: 0.2rem;
-                //padding: 5px;
-                //padding-left: 1rem;
-                max-width: 250px;
-                cursor: pointer;
-                //box-shadow: inset #000 0 -20px 20px; 
             }
     
             i {
