@@ -28,7 +28,8 @@ const MyList = ({list, listTitle}) => {
                             <img src={item.coverUrl} alt={item.nameRu || item.nameEn || item.nameOriginal} />
                             <span className={styles.name}>{item.nameRu || item.nameEn || item.nameOriginal}</span>
                             <span className={styles.duration}>{
-                                `${Math.floor(item.filmLength / 60)? Math.floor(item.filmLength / 60) + 'h ' : ''} ${item.filmLength % 60}min`
+                                !item.filmLength ? '' : 
+                                (`${Math.floor(item.filmLength / 60)? Math.floor(item.filmLength / 60) + 'h ' : ''} ${item.filmLength % 60}min` )
                             }</span>
                             {/* <i className='bx bx-play'></i> */}
                         </div>
