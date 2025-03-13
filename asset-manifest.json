@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/moviemax/static/css/main.a0b665c6.css",
-    "main.js": "/moviemax/static/js/main.0ef695de.js",
-    "static/js/633.06e2a15a.chunk.js": "/moviemax/static/js/633.06e2a15a.chunk.js",
-    "static/media/bg.jpg": "/moviemax/static/media/bg.933fc2923bf4d9541e92.jpg",
-    "static/media/wednesdayImage.jpg": "/moviemax/static/media/wednesdayImage.f2c3c6183391199cf8fd.jpg",
-    "static/media/minions-logo.png": "/moviemax/static/media/minions-logo.e58631c0f1f3927429ae.png",
-    "static/media/OVIEMAX.png": "/moviemax/static/media/OVIEMAX.543e7278728c4a496dcd.png",
-    "static/media/wednesday-logo.webp": "/moviemax/static/media/wednesday-logo.2f8081df8e8ec96e0028.webp",
-    "index.html": "/moviemax/index.html",
-    "main.a0b665c6.css.map": "/moviemax/static/css/main.a0b665c6.css.map",
-    "main.0ef695de.js.map": "/moviemax/static/js/main.0ef695de.js.map",
-    "633.06e2a15a.chunk.js.map": "/moviemax/static/js/633.06e2a15a.chunk.js.map"
+    "main.css": "/static/css/main.a0b665c6.css",
+    "main.js": "/static/js/main.b6052beb.js",
+    "static/js/633.06e2a15a.chunk.js": "/static/js/633.06e2a15a.chunk.js",
+    "static/media/bg.jpg": "/static/media/bg.933fc2923bf4d9541e92.jpg",
+    "static/media/wednesdayImage.jpg": "/static/media/wednesdayImage.f2c3c6183391199cf8fd.jpg",
+    "static/media/minions-logo.png": "/static/media/minions-logo.e58631c0f1f3927429ae.png",
+    "static/media/OVIEMAX.png": "/static/media/OVIEMAX.543e7278728c4a496dcd.png",
+    "static/media/wednesday-logo.webp": "/static/media/wednesday-logo.2f8081df8e8ec96e0028.webp",
+    "index.html": "/index.html",
+    "main.a0b665c6.css.map": "/static/css/main.a0b665c6.css.map",
+    "main.b6052beb.js.map": "/static/js/main.b6052beb.js.map",
+    "633.06e2a15a.chunk.js.map": "/static/js/633.06e2a15a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0b665c6.css",
-    "static/js/main.0ef695de.js"
+    "static/js/main.b6052beb.js"
   ]
 }
