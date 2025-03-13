@@ -95,4 +95,11 @@ export function scrollToTop() {
     });
 }
 
+export function rndm(min, max) {
+    if (min >= max) {
+      throw new Error("Мин не может быть больше или равен макс");
+    }
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
 

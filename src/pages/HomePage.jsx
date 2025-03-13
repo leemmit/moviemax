@@ -52,9 +52,7 @@ const HomePage = ({ onMovieIdChange }) => {
     
     //const url = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2024&month=AUGUST'
     //const url = URL_PREMIERES_MOVIE;
-    //const urlPopular = URL_PREMIERE_NOW;
-    const urlPopular = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_MOVIES&page=1';
-
+    const urlPopular = URL_PREMIERE_NOW;
     
 
     useEffect(() => {

@@ -9,7 +9,6 @@ const MovieContainer = ({ url, onMovieIdChange }) => {
     const [movies, setMovies] = useState([]);
     const [id, setId] = useState(0)
     const navigate = useNavigate();
-    //const styles = useStyleL ? styles_L : styles_S;
     const styles = styles_S;
 
     useEffect(() => {
