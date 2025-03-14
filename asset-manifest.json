@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.a0b665c6.css",
-    "main.js": "/static/js/main.b6052beb.js",
-    "static/js/633.06e2a15a.chunk.js": "/static/js/633.06e2a15a.chunk.js",
-    "static/media/bg.jpg": "/static/media/bg.933fc2923bf4d9541e92.jpg",
-    "static/media/wednesdayImage.jpg": "/static/media/wednesdayImage.f2c3c6183391199cf8fd.jpg",
-    "static/media/minions-logo.png": "/static/media/minions-logo.e58631c0f1f3927429ae.png",
-    "static/media/OVIEMAX.png": "/static/media/OVIEMAX.543e7278728c4a496dcd.png",
-    "static/media/wednesday-logo.webp": "/static/media/wednesday-logo.2f8081df8e8ec96e0028.webp",
-    "index.html": "/index.html",
-    "main.a0b665c6.css.map": "/static/css/main.a0b665c6.css.map",
-    "main.b6052beb.js.map": "/static/js/main.b6052beb.js.map",
-    "633.06e2a15a.chunk.js.map": "/static/js/633.06e2a15a.chunk.js.map"
+    "main.css": "/home/static/css/main.a0b665c6.css",
+    "main.js": "/home/static/js/main.66377cc9.js",
+    "static/js/633.06e2a15a.chunk.js": "/home/static/js/633.06e2a15a.chunk.js",
+    "static/media/bg.jpg": "/home/static/media/bg.933fc2923bf4d9541e92.jpg",
+    "static/media/wednesdayImage.jpg": "/home/static/media/wednesdayImage.f2c3c6183391199cf8fd.jpg",
+    "static/media/minions-logo.png": "/home/static/media/minions-logo.e58631c0f1f3927429ae.png",
+    "static/media/OVIEMAX.png": "/home/static/media/OVIEMAX.543e7278728c4a496dcd.png",
+    "static/media/wednesday-logo.webp": "/home/static/media/wednesday-logo.2f8081df8e8ec96e0028.webp",
+    "index.html": "/home/index.html",
+    "main.a0b665c6.css.map": "/home/static/css/main.a0b665c6.css.map",
+    "main.66377cc9.js.map": "/home/static/js/main.66377cc9.js.map",
+    "633.06e2a15a.chunk.js.map": "/home/static/js/633.06e2a15a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0b665c6.css",
-    "static/js/main.b6052beb.js"
+    "static/js/main.66377cc9.js"
   ]
 }
