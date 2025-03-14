@@ -8,7 +8,7 @@ const Header = ({ onSearchChange }) => {
     return (
         <div className={styles.header}>
             <div>
-                <Link to="/home">
+                <Link to="/">
                     <img 
                     //src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" 
                     src={logo}
