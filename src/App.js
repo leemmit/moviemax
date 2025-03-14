@@ -15,7 +15,7 @@ function App() {
       <Router>
           <Header onSearchChange={setSearchValue}/>
           <Routes>
-              <Route exact path="/" Component={() => <HomePage onMovieIdChange={setMovieId} />} />
+              <Route exact path="/home" Component={() => <HomePage onMovieIdChange={setMovieId} />} />
               <Route exact path="/list" Component={() => <ListMoviePage searchValue={searchValue} onMovieIdChange={setMovieId} />} />
               <Route exact path="/movie" Component={() => <MoviePage movieId={movieId} />} />
           </Routes>
