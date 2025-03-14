@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/home/static/css/main.a0b665c6.css",
-    "main.js": "/home/static/js/main.66377cc9.js",
-    "static/js/633.06e2a15a.chunk.js": "/home/static/js/633.06e2a15a.chunk.js",
-    "static/media/bg.jpg": "/home/static/media/bg.933fc2923bf4d9541e92.jpg",
-    "static/media/wednesdayImage.jpg": "/home/static/media/wednesdayImage.f2c3c6183391199cf8fd.jpg",
-    "static/media/minions-logo.png": "/home/static/media/minions-logo.e58631c0f1f3927429ae.png",
-    "static/media/OVIEMAX.png": "/home/static/media/OVIEMAX.543e7278728c4a496dcd.png",
-    "static/media/wednesday-logo.webp": "/home/static/media/wednesday-logo.2f8081df8e8ec96e0028.webp",
-    "index.html": "/home/index.html",
-    "main.a0b665c6.css.map": "/home/static/css/main.a0b665c6.css.map",
-    "main.66377cc9.js.map": "/home/static/js/main.66377cc9.js.map",
-    "633.06e2a15a.chunk.js.map": "/home/static/js/633.06e2a15a.chunk.js.map"
+    "main.css": "/moviemax/home/static/css/main.a0b665c6.css",
+    "main.js": "/moviemax/home/static/js/main.03cb6f8c.js",
+    "static/js/633.06e2a15a.chunk.js": "/moviemax/home/static/js/633.06e2a15a.chunk.js",
+    "static/media/bg.jpg": "/moviemax/home/static/media/bg.933fc2923bf4d9541e92.jpg",
+    "static/media/wednesdayImage.jpg": "/moviemax/home/static/media/wednesdayImage.f2c3c6183391199cf8fd.jpg",
+    "static/media/minions-logo.png": "/moviemax/home/static/media/minions-logo.e58631c0f1f3927429ae.png",
+    "static/media/OVIEMAX.png": "/moviemax/home/static/media/OVIEMAX.543e7278728c4a496dcd.png",
+    "static/media/wednesday-logo.webp": "/moviemax/home/static/media/wednesday-logo.2f8081df8e8ec96e0028.webp",
+    "index.html": "/moviemax/home/index.html",
+    "main.a0b665c6.css.map": "/moviemax/home/static/css/main.a0b665c6.css.map",
+    "main.03cb6f8c.js.map": "/moviemax/home/static/js/main.03cb6f8c.js.map",
+    "633.06e2a15a.chunk.js.map": "/moviemax/home/static/js/633.06e2a15a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0b665c6.css",
-    "static/js/main.66377cc9.js"
+    "static/js/main.03cb6f8c.js"
   ]
 }
