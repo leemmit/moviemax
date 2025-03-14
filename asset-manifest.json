@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/moviemax/static/css/main.a0b665c6.css",
-    "main.js": "/moviemax/static/js/main.ec56596c.js",
+    "main.js": "/moviemax/static/js/main.f1a6f281.js",
     "static/js/633.06e2a15a.chunk.js": "/moviemax/static/js/633.06e2a15a.chunk.js",
     "static/media/bg.jpg": "/moviemax/static/media/bg.933fc2923bf4d9541e92.jpg",
     "static/media/wednesdayImage.jpg": "/moviemax/static/media/wednesdayImage.f2c3c6183391199cf8fd.jpg",
@@ -10,11 +10,11 @@
     "static/media/wednesday-logo.webp": "/moviemax/static/media/wednesday-logo.2f8081df8e8ec96e0028.webp",
     "index.html": "/moviemax/index.html",
     "main.a0b665c6.css.map": "/moviemax/static/css/main.a0b665c6.css.map",
-    "main.ec56596c.js.map": "/moviemax/static/js/main.ec56596c.js.map",
+    "main.f1a6f281.js.map": "/moviemax/static/js/main.f1a6f281.js.map",
     "633.06e2a15a.chunk.js.map": "/moviemax/static/js/633.06e2a15a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0b665c6.css",
-    "static/js/main.ec56596c.js"
+    "static/js/main.f1a6f281.js"
   ]
 }
