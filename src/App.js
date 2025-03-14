@@ -15,9 +15,9 @@ function App() {
       <Router>
           <Header onSearchChange={setSearchValue}/>
           <Routes>
-              <Route exact path="/" element={() => <HomePage onMovieIdChange={setMovieId} />} />
-              <Route exact path="/list" element={() => <ListMoviePage searchValue={searchValue} onMovieIdChange={setMovieId} />} />
-              <Route exact path="/movie" element={() => <MoviePage movieId={movieId} />} />
+              <Route path="/" element={() => <HomePage onMovieIdChange={setMovieId} />} />
+              <Route path="/list" element={() => <ListMoviePage searchValue={searchValue} onMovieIdChange={setMovieId} />} />
+              <Route path="/movie" element={() => <MoviePage movieId={movieId} />} />
           </Routes>
           <Footer/>
       </Router>
