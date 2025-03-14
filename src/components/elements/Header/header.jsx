@@ -2,12 +2,13 @@ import Search from "../../UI/Search/Search"
 import styles from "./Header.module.scss"
 import Profile from "./Profile"
 import logo from "../../../images/OVIEMAX.png"
+import { Link } from 'react-router-dom';
 
 const Header = ({ onSearchChange }) => {
     return (
         <div className={styles.header}>
             <div>
-                <a href="/home">
+                <Link to="/home">
                     <img 
                     //src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" 
                     src={logo}
@@ -15,7 +16,7 @@ const Header = ({ onSearchChange }) => {
                     height='35'
                     width='150' 
                     />
-                </a>
+                </Link>
                 <Search onSearchChange={onSearchChange} />
             </div>
             <Profile/>
